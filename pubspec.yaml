@@ -1,4 +1,4 @@
-name: flutter_month_picker
+name: month_picker_intl
 description: Flutter month picker package lets you to choose month and year only and implement in your app.
 version: 0.0.2
 homepage: https://github.com/flutter-custom-packages/flutter_month_picker
