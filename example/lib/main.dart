@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_month_picker/flutter_month_picker.dart';
+import 'package:month_picker_intl/month_picker_intl.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
