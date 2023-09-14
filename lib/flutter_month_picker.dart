@@ -63,7 +63,9 @@ class __MonthPickerState extends State<_MonthPicker> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
+    final theme = Theme.of(
+      context,
+    );
     final pager = _buildPager(theme.colorScheme);
 
     final content = Material(
@@ -83,27 +85,31 @@ class __MonthPickerState extends State<_MonthPicker> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Builder(
-            builder: (context) {
-              return MediaQuery.of(context).orientation == Orientation.portrait
-                  ? IntrinsicWidth(
-                      child: Column(
-                      children: [
-                        IntrinsicHeight(
-                          child: _buildHeader(theme),
-                        ),
-                        const SizedBox(height: 8.0),
-                        content,
-                      ],
-                    ))
-                  : IntrinsicHeight(
-                      child: Row(children: [
-                        _buildHeader(theme),
-                        const SizedBox(width: 8.0),
-                        content,
-                      ]),
-                    );
-            },
+          Theme(
+            data: ThemeData(useMaterial3: true),
+            child: Builder(
+              builder: (context) {
+                return MediaQuery.of(context).orientation ==
+                        Orientation.portrait
+                    ? IntrinsicWidth(
+                        child: Column(
+                        children: [
+                          IntrinsicHeight(
+                            child: _buildHeader(theme),
+                          ),
+                          const SizedBox(height: 8.0),
+                          content,
+                        ],
+                      ))
+                    : IntrinsicHeight(
+                        child: Row(children: [
+                          _buildHeader(theme),
+                          const SizedBox(width: 8.0),
+                          content,
+                        ]),
+                      );
+              },
+            ),
           ),
         ],
       ),
